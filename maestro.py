@@ -59,7 +59,9 @@ def opus_orchestrator(objective, file_content=None, previous_results=None, use_s
         }
     ]
     if use_search:
-        messages[0]["content"].append({"type": "text", "text": "Please also generate a JSON object containing a single 'search_query' key, which represents a question that, when asked online, would yield important information for solving the subtask. The question should be specific and targeted to elicit the most relevant and helpful resources. Format your JSON like this, with no additional text before or after:\n{\"search_query\": \"<question>\"}\n"})
+        messages[0]["content"].append({"type": "text", "text": "Please also generate a JSON object containing a single 'search_query' key, which represents a question that, 
+        when asked online, would yield important information for solving the subtask. The question should be specific and targeted to elicit the most relevant and helpful 
+        resources. Format your JSON like this, with no additional text before or after:\n{\"search_query\": \"<question>\"}\n"})
 
     opus_response = client.messages.create(
         model=ORCHESTRATOR_MODEL,
